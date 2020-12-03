@@ -1,4 +1,4 @@
 ANGGOTA KELOMPOK
-1. Abiya Sabitta Ragadani - 05111940000166
+1. Afifah Nur Sabrina Syamsudin - 05111940000022
 2. Vrya Fania Adelina - 05111940000109
-3. Afifah Nur Sabrina Syamsudin - 05111940000022
+3. Abiya Sabitta Ragadani - 05111940000166
