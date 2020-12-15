@@ -61,7 +61,7 @@ Class ini merupakan class main yang memiliki beberapa method yaitu
 3. Class Main yang akan menjalankan game
 
 ## Screenshot Class Diagram
-<p float="left"><img src="Screenshot/SS_Collision_Detection.png" width=450 height= 450><img src="Screenshot/SS_Collision_Detection2.png" width=450 height= 450></p>
+
 
 ## Screenshot Program
 <img src="Screenshot/SS_Collision_Detection3.png" width=450 height= 450>
