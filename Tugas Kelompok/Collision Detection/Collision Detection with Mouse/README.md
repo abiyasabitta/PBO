@@ -29,11 +29,12 @@ private class TAdapter extends MouseAdapter {
     }
 ```
 ``MAdapter`` berfungsi membaca tiap gerakan mouse yang dilakukan.
-`` private class MAdapter extends MouseAdapter{
+```hide 
+private class MAdapter extends MouseAdapter{
         @Override
         public void mouseMoved(MouseEvent e) { spaceship.move(e);}
-    }``
-    
+    }
+```
 ### SpaceShip
 
 ### ScreenShot Class Diagram
