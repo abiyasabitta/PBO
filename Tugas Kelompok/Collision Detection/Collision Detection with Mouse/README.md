@@ -36,7 +36,7 @@ private class MAdapter extends MouseAdapter{
     }
 ```
 ### SpaceShip
-``mousePressed`` berfungsi membaca dan memberikan action berupa gerakan mouse user.
+``mousePressed`` berfungsi membaca dan memberikan action berupa gerakan dari mouse user.
 ```hide
 public void mousePressed(MouseEvent e) {
 
