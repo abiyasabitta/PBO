@@ -21,7 +21,7 @@ berikut ini method yang ditambahkan pada class ``SpaceShip`` dan ``Board``.
 
 ### Board
 Tiap class sudah meng **extends** ``MouseAdapter`` 
-``TAdapter`` berfungi membaca input dari mouse.
+``TAdapter`` berfungsi membaca input dari mouse, method ``mousePressed`` di *override* dari class ``SpaceShip``.
 ```hide
 private class TAdapter extends MouseAdapter {
         @Override
@@ -36,6 +36,17 @@ private class MAdapter extends MouseAdapter{
     }
 ```
 ### SpaceShip
+``mousePressed`` berfungsi membaca dan memberikan action berupa gerakan mouse user.
+```hide
+public void mousePressed(MouseEvent e) {
+
+        int key = e.getButton();
+
+        if (key == 1) {
+            fire();
+        }
+    }
+```
 
 ### ScreenShot Class Diagram
 
