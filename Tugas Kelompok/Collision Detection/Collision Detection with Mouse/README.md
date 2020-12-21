@@ -20,7 +20,7 @@ yang diberikan user kepada komponen GUI. 2 *event handling* tersebut adalah:
 berikut ini method yang ditambahkan pada class ``SpaceShip`` dan ``Board``.
 
 ### Board
-Tiap class sudah meng **extends** ``MouseAdapter`` 
+Tiap class sudah meng **extends** ``MouseAdapter``.
 ``TAdapter`` berfungsi membaca input dari mouse, method ``mousePressed`` di *override* dari class ``SpaceShip``.
 ```hide
 private class TAdapter extends MouseAdapter {
