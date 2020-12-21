@@ -4,7 +4,7 @@
 2. Vyra Fania Adelina 05111940000109
 3. Abiya Sabitta Ragadani 05111940000166
 
-### Perubahan
+## Perubahan
 - Menggunakan Mouse Handling
 
 Dalam aplikasi game yang telah dibuat terdapat 2 cara untuk *event handling* atau metode untuk menangani sebuah event/aksi 
@@ -16,4 +16,24 @@ yang diberikan user kepada komponen GUI. 2 *event handling* tersebut adalah:
     Method yang digunakan ditambahkan pada aplikasi Collision Detection ini yakni, ``mousePressed`` pada class ``SpaceShip``, ``MAdapter`` dan ``TAdapter`` dengan
     men **extends** ``MouseAdapter`` di dalam class ``Board``.
 
-### Cara Kerja
+## Cara Kerja
+berikut ini method yang ditambahkan pada class ``SpaceShip`` dan ``Board``.
+
+### Board
+//Method to read, Mouse input available
+    private class TAdapter extends MouseAdapter {
+        @Override
+        public void mousePressed(MouseEvent e){ spaceship.mousePressed(e);}
+    }
+    
+    //Method to read, Mouse movement
+    private class MAdapter extends MouseAdapter{
+        @Override
+        public void mouseMoved(MouseEvent e) { spaceship.move(e);}
+    }
+
+### SpaceShip
+
+### ScreenShot Class Diagram
+
+### Screenshot Program
