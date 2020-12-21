@@ -52,4 +52,4 @@ public void mousePressed(MouseEvent e) {
 ![classdiagram](https://github.com/abiyasabitta/PBO/blob/main/Tugas%20Kelompok/Collision%20Detection/Screenshot/CollisionDetectionWithMouse_Diagram.jpg)
 
 ### Screenshot Program
-![programgif](https://github.com/abiyasabitta/PBO/commit/d5bce29b6d579bc8d131de2812808d54ed9d10d7)
+![programgif](https://github.com/abiyasabitta/PBO/blob/main/Tugas%20Kelompok/Collision%20Detection/Screenshot/CollisionDetectionWithMouse_Program.gif)
