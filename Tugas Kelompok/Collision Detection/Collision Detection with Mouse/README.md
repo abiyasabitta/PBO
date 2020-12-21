@@ -20,12 +20,13 @@ yang diberikan user kepada komponen GUI. 2 *event handling* tersebut adalah:
 berikut ini method yang ditambahkan pada class ``SpaceShip`` dan ``Board``.
 
 ### Board
-    //Method to read, Mouse input available
+Tiap class sudah meng **extends** ``MouseAdapter`` 
+``TAdapter`` berfungi membaca input dari mouse.
     private class TAdapter extends MouseAdapter {
         @Override
         public void mousePressed(MouseEvent e){ spaceship.mousePressed(e);}
     }
-    //Method to read, Mouse movement
+``MAdapter`` berfungsi membaca tiap gerakan mouse yang dilakukan.
     private class MAdapter extends MouseAdapter{
         @Override
         public void mouseMoved(MouseEvent e) { spaceship.move(e);}
