@@ -3,17 +3,20 @@
 2. Vrya Fania Adelina - 05111940000109
 3. Abiya Sabitta Ragadani - 05111940000166
 
-## SNAKE
+# SNAKE
 - Jenis dari aplikasi yang dibuat adalah **Game**.
 
 ## Features
-- Memilih ``Character``
-- Memilih ``Level``
-- Mengulang permainan
+- Memilih `Character`
+- Memilih `Level`
+- Mengulang permainan -> `Play Again`
+- Menghitung `Score` per babak
+- Menyimpan `High Score`
+- 
 
-## Class Diagram
+# Class Diagram
 
-## References
+# References
 [Source Code](http://zetcode.com/javagames/snake/)
 
 [Video](https://www.youtube.com/watch?v=bI6e6qjJ8JQ)
