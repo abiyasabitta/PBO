@@ -15,6 +15,6 @@
 
 ## References
 [Source Code](http://zetcode.com/javagames/snake/)
-```hide
+
 [Video](https://www.youtube.com/watch?v=bI6e6qjJ8JQ)
 
