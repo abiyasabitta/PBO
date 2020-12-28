@@ -8,11 +8,17 @@
 
 ## Features
 - Memilih `Character`
+  - Snake
+  - Dog
+  - Cat
+  - Monkey
 - Memilih `Level`
+  - Easy
+  - Normal
+  - Hard
 - Mengulang permainan -> `Play Again`
 - Menghitung `Score` per babak
 - Menyimpan `High Score`
-- 
 
 # Class Diagram
 
