@@ -1,7 +1,19 @@
-## ANGGOTA KELOMPOK
+### ANGGOTA KELOMPOK
 1. Afifah Nur Sabrina Syamsudin - 05111940000022
 2. Vrya Fania Adelina - 05111940000109
 3. Abiya Sabitta Ragadani - 05111940000166
 
-### SNAKE
-- Jenis dari aplikasi yang dibuat adalah game. Namun dilakukan beberapa modifikasi yang mengimplementasikan
+## SNAKE
+- Jenis dari aplikasi yang dibuat adalah **Game**.
+
+## Features
+- Memilih ``Character``
+- Memilih ``Level``
+- Mengulang permainan
+
+## Class Diagram
+
+## References
+[Source Code](http://zetcode.com/javagames/snake/)
+[Video](https://www.youtube.com/watch?v=bI6e6qjJ8JQ)
+
