@@ -7,20 +7,20 @@
 - Jenis dari aplikasi yang dibuat adalah **Game**.
 
 ## Features
-- Memilih `Character`
+-[X] Memilih `Character`
   - Snake
   - Dog
   - Cat
-  - Monkey
-- Memilih `Level`
+-[X] Memilih `Level`
   - Easy
   - Normal
   - Hard
-- Mengulang permainan -> `Play Again`
-- Menghitung `Score` per babak
-- Menyimpan `High Score`
+-[] Mengulang permainan -> `Play Again`
+-[] Menghitung `Score` per babak
+-[] Menyimpan `High Score`
 
 # Class Diagram
+
 
 # References
 [Source Code](http://zetcode.com/javagames/snake/)
