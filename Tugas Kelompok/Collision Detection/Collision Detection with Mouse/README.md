@@ -53,4 +53,5 @@ public void mousePressed(MouseEvent e) {
 
 ### Screenshot Program
 ![programgif](https://github.com/abiyasabitta/PBO/blob/main/Tugas%20Kelompok/Collision%20Detection/Screenshot/CollisionDetectionWithMouse_Program.gif)
-![[Space Invader v.1](http://www.youtube.com/watch?v=P2OqZse8u00 "Space Invader v.1")
+
+[Space Invader v.1](http://www.youtube.com/watch?v=P2OqZse8u00 "Space Invader v.1")
