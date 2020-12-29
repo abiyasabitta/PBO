@@ -20,6 +20,8 @@
 - [ ] Menyimpan `High Score`
 - [ ] Display `Game Over`
 
+## Class Description
+
 # Class Diagram
 ![ClassDiagram](https://github.com/abiyasabitta/PBO/blob/main/Final%20Project/Screenshot/ClassDiagram_Snake.jpeg)
 
