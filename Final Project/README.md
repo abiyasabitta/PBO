@@ -16,11 +16,13 @@
   - Normal
   - Hard
 - [ ] Jenis `Snack`
-- [ ] Memilih `Level`
-- [ ] Mengulang permainan -> `Play Again`
+  - Red Apple
+  - Golden Apple
+  - Rotten Apple
 - [ ] Menghitung `Score` per babak
 - [ ] Menyimpan `High Score`
 - [ ] Display `Game Over`
+- [ ] Mengulang permainan -> `Play Again`
 
 ## Class Description
 
