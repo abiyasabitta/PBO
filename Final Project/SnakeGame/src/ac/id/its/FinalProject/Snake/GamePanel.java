@@ -24,6 +24,7 @@ public class GamePanel extends JPanel implements ActionListener {
     boolean running = false;
     Timer timer;
     Random random;
+    static boolean gameOn = false;
 
     GamePanel(){
         random = new Random();
@@ -38,6 +39,16 @@ public class GamePanel extends JPanel implements ActionListener {
         newApple1();
         running = true;
         timer = new Timer(DELAY, this);
+        timer.start();
+    }
+    
+    public void pause() {
+        GamePanel.gameOn = true;
+        timer.stop();
+    }
+
+    public void resume() {
+        GamePanel.gameOn = false;
         timer.start();
     }
 
@@ -190,6 +201,13 @@ public class GamePanel extends JPanel implements ActionListener {
                 case KeyEvent.VK_DOWN:
                     if(direction != 'U'){
                         direction = 'D';
+                    }
+                    break;
+                case KeyEvent.VK_SPACE:
+                    if(GamePanel.gameOn) {
+                        resume();
+                    } else {
+                        pause();
                     }
                     break;
             }
