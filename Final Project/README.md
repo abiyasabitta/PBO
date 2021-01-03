@@ -21,9 +21,9 @@
   - Rotten Apple
 - [ ] Menghitung `Score` per babak
 - [ ] Menyimpan `High Score`
-- [ ] Display `Game Over`
+- [x] Display `Game Over`
 - [ ] Mengulang permainan -> `Play Again`
-- [ ] Pause permainan -> `Pause` 
+- [x] Pause permainan -> `Pause` 
 
 ## Class Description
 
