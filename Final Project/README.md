@@ -7,14 +7,16 @@
 - Jenis dari aplikasi yang dibuat adalah **Game**.
 
 ## Features
-- [x] Memilih `Character`
+- [ ] Memilih `Character`
   - Snake
-  - Dog
-  - Cat
-- [x] Memilih `Level`
+  - Centipede
+  - Worm
+- [ ] Memilih `Level`
   - Easy
   - Normal
   - Hard
+- [ ] Jenis `Snack`
+- [ ] Memilih `Level`
 - [ ] Mengulang permainan -> `Play Again`
 - [ ] Menghitung `Score` per babak
 - [ ] Menyimpan `High Score`
