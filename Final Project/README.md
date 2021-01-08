@@ -3,11 +3,11 @@
 2. Vyra Fania Adelina - 05111940000109
 3. Abiya Sabitta Ragadani - 05111940000166
 
-# SNAKE
+# Munch Munch
 - Jenis dari aplikasi yang dibuat adalah **Game**.
 
 ## Features
-- [ ] Memilih `Character`
+- [x] Memilih `Character`
   - Snake
   - Centipede
   - Worm
@@ -26,6 +26,22 @@
 - [x] Pause permainan -> `Pause` 
 
 ## Class Description
+Pada aplikasi game yang dibuat terdapat tiga `Class` yakni `Main`, `GameFrame`, `GamePanel` dan `Character`.
+
+### Main
+
+### GameFrame
+
+### GamePanel
+
+### Character
+class ini difungsikan untuk mengatur atau memilih character game yang memiliki tiga subclass `Snake`, `Centipede` dan `Worm`.
+
+#### Snake
+
+#### Centipede
+
+#### Worm
 
 # Class Diagram
 ![ClassDiagram](https://github.com/abiyasabitta/PBO/blob/main/Final%20Project/Screenshot/ClassDiagram_Snake_FP.png)
