@@ -11,7 +11,7 @@
   - Snake
   - Centipede
   - Worm
-- [ ] Memilih `Level`
+- [x] Memilih `Level`
   - Easy
   - Normal
   - Hard
