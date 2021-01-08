@@ -141,12 +141,14 @@ public class GamePanel extends JPanel implements ActionListener {
     }
 
         public void checkApple(){
-            if((x[0] == appleX) && (y[0] == appleY)){
-                bodyParts++;
-                applesEaten++;
-                newApple1();
-                newApple2();
-            }
+            for(int n = 0; n < speed; n++) {
+        	if((x[n] == appleX) && (y[n] == appleY)){
+			bodyParts++;
+			applesEaten++;
+                    	newApple1();
+                    	newApple2();
+		}
+	    }
         }
 
         public void checkCollision(){
