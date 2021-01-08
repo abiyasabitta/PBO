@@ -28,7 +28,7 @@
 ## Class Description
 
 # Class Diagram
-![ClassDiagram](https://github.com/abiyasabitta/PBO/blob/main/Final%20Project/Screenshot/ClassDiagram_Snake_FP.PNG)
+![ClassDiagram](https://github.com/abiyasabitta/PBO/blob/main/Final%20Project/Screenshot/ClassDiagram_Snake_FP.png)
 
 # References
 [Source Code](http://zetcode.com/javagames/snake/)
