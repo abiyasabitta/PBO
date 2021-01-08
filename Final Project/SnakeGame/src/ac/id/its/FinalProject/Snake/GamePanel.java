@@ -54,16 +54,16 @@ public class GamePanel extends JPanel implements ActionListener {
     }
     
     private void chooseDifficulty() {
-		// Opsi karakter
+		// Opsi difficulty
 		String[] options1 = {"Easy", "Medium", "Hard"} ;
 		
-		// JOptionPane untuk memilih karakter
+		// JOptionPane untuk memilih level
 		int input2 = JOptionPane.showOptionDialog(null, 
 				"Choose Difficulty", 
 				"'Snake' Game", 
 				JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, options1, options1[0]) ;
 		
-		// Seleksi pilihan karakter
+		// Seleksi pilihan level
 		if (input2 == 0) {
 			this.speed = 1;
 		}
