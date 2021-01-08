@@ -37,6 +37,8 @@ public class GamePanel extends JPanel implements ActionListener {
     }
 
     public void startGame(){
+	 chooseDifficulty();
+	    
         newApple1();
         running = true;
         timer = new Timer(DELAY, this);
