@@ -187,6 +187,12 @@ public class GamePanel extends JPanel implements ActionListener {
                 timer.stop();
             }
         }
+	
+	public void getHighScore(int score) {
+    		if(score > highScore) {
+    			highScore = score;
+    		}
+    	}
 
         public void gameOver(Graphics graphics){
             graphics.setColor(Color.RED);
