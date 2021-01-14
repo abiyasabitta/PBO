@@ -19,8 +19,8 @@
   - Red Apple
   - Golden Apple
   - Rotten Apple
-- [ ] Menghitung `Score` per babak
-- [ ] Menyimpan `High Score`
+- [x] Menghitung `Score` per babak
+- [ ] Menyimpan `High Score` >> (Still display for a game)
 - [x] Display `Game Over`
 - [ ] Mengulang permainan -> `Play Again`
 - [x] Pause permainan -> `Pause` 
