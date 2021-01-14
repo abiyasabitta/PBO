@@ -106,7 +106,8 @@ public class GamePanel extends JPanel implements ActionListener {
                     graphics.getFont().getSize());
             }
         else{
-            gameOver(graphics);
+		getHighScore(applesEaten);
+		gameOver(graphics);
         }
     }
 
