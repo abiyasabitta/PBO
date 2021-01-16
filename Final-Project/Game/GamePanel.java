@@ -18,6 +18,7 @@ public class GamePanel extends JPanel implements ActionListener {
     int applesEaten = 0; //initialize score
     int appleX;
     int appleY;
+	boolean start = true;
     char direction = 'R';
     boolean running = false;
     Timer timer;
@@ -30,7 +31,11 @@ public class GamePanel extends JPanel implements ActionListener {
     private String fileName = "SaveData";
     
     GamePanel(){
-        try {
+        initGamePanel();
+    }
+    
+	public void initGamePanel(){
+	try {
     		saveDataPath = GamePanel.class.getProtectionDomain().getCodeSource().getLocation().toURI().getPath();
 //    		saveDataPath = System.getProperty("user.home") + "\\foldername";
     	}
@@ -38,7 +43,7 @@ public class GamePanel extends JPanel implements ActionListener {
     		e.printStackTrace();
     	}
         
-        loadHighScore()
+        loadHighScore();
             
         random = new Random();
         this.setPreferredSize(new Dimension(SCREEN_WIDTH, SCREEN_HEIGHT));
@@ -46,8 +51,8 @@ public class GamePanel extends JPanel implements ActionListener {
         this.setFocusable(true);
         this.addKeyListener(new MyKeyAdapter());
         startGame();
-    }
-    
+	}
+	
     private void createSaveData(){
     	try {
     		File file = new File(saveDataPath, fileName);
@@ -124,11 +129,16 @@ public class GamePanel extends JPanel implements ActionListener {
 	}
 
     public void startGame(){
-        chooseDifficulty()
+	    if(start){
+		running = false;
+	    }
+        else{
+	chooseDifficulty();
         newApple();
         running = true;
         timer = new Timer(DELAY, this);
         timer.start();
+	}
     }
     
     public void pause() {
@@ -140,14 +150,31 @@ public class GamePanel extends JPanel implements ActionListener {
         GamePanel.gameOn = false;
         timer.start();
     }
-
+	
+	public void reset(){
+		start = true;
+        applesEaten = 0;
+        bodyParts = 6;
+        direction = 'R';
+        x[0] = 0;
+        y[0] = 0;
+        timer.restart();
+        running = false;
+        gameOn = false;
+	initGamePanel();
+	}		
+	
     public void paintComponent(Graphics graphics){
         super.paintComponent(graphics);
         draw(graphics);
     }
 
     public void draw(Graphics graphics) {
-        if (running) {
+	Menu screen = new Menu(SCREEN_WIDTH, SCREEN_HEIGHT);
+        if(start){
+		screen.menugame(graphics);
+	}
+	else if (running) {
             graphics.setColor(Color.RED);
             graphics.fillOval(appleX, appleY, UNIT_SIZE, UNIT_SIZE);
 
@@ -163,7 +190,7 @@ public class GamePanel extends JPanel implements ActionListener {
             drawScore(graphics);
             }
         else{
-            gameOver(graphics);
+            screen.gameOver(graphics, applesEaten);
         }
     }
 
@@ -247,15 +274,6 @@ public class GamePanel extends JPanel implements ActionListener {
         		((SCREEN_HEIGHT - 575)));
         }
 
-        public void gameOver(Graphics graphics){
-            drawScore(graphics);
-            //Game Over text
-            graphics.setColor(Color.red);
-            graphics.setFont( new Font("Calibri",Font.BOLD, 75));
-            FontMetrics metrics2 = getFontMetrics(graphics.getFont());
-            graphics.drawString("Game Over", (SCREEN_WIDTH - metrics2.stringWidth("Game Over"))/2, SCREEN_HEIGHT/2);
-        }
-
     @Override
     public void actionPerformed(ActionEvent e){
         if(running){
@@ -291,10 +309,21 @@ public class GamePanel extends JPanel implements ActionListener {
                     }
                     break;
                 case KeyEvent.VK_SPACE:
-                    if(GamePanel.gameOn) {
+                    if(running){
+		    	if(GamePanel.gameOn) {
                         resume();
-                    } else {
+                    	} else {
                         pause();
+                   	}
+		    }
+		    else{
+		    	reset();
+		    }
+                    break;
+		case KeyEvent.VK_ENTER:
+                    if(start){
+                        start = false;
+                        startGame();
                     }
                     break;
             }
