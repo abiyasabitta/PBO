@@ -21,7 +21,7 @@ Hungry Creatures adalah sebuah permainan sederhana yang terinspirasi dari video 
 - [x] Menghitung `Score` per babak
 - [x] Menyimpan `High Score`
 - [x] Display `Game Over`
-- [ ] `Play Again`
+- [x] `Play Again`
 
 ## Class Description
 
@@ -51,11 +51,12 @@ Hungry Creatures adalah sebuah permainan sederhana yang terinspirasi dari video 
 # Perubahan
 - Sistem `HighScore` menggunakan method
 ```createSaveData```, ```loadHighScore``` dan ```setHighScore```
-- Memilih Character terdapat Snake, Centipede, dan Worm menggunakan method ```chooseCharacter``` yang akan diteruskan di method ```drawCharacter```
-- Jenis Snack terdapat Red Apple dan Poison Apple menggunakan method `drawApple`
-- Memilih level
+- Memilih `Character` terdapat `Snake`, `Centipede`, dan `Worm` menggunakan method ```chooseCharacter``` yang akan diteruskan di method ```drawCharacter```
+- Jenis `Snack` terdapat `Red Apple` dan `Poison Apple` menggunakan method `drawApple`
+- Memilih `Level`: `Easy`, `Normal`, dan `Hard`.
 
 # Class Diagram
+![ClassDiagram]
 
 # References
 [Video](https://www.youtube.com/watch?v=bI6e6qjJ8JQ)
