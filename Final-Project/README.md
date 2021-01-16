@@ -29,6 +29,7 @@ Hungry Creatures adalah sebuah permainan sederhana yang terinspirasi dari video 
 `Class Main` merupakan `class` utama untuk menjalankan program permainan.
 
 ### GameFrame
+`Class GameFrame` merupakan `class` yang berisikan objek - objek untuk membentuk jendela permainan.
 
 ### GamePanel
 `Class GamePanel` difungsikan sebagai kontrol utama semua komponen permainan, seperti memunculkan permainan dengan method `draw(Graphics graphics)`, memunculkan teks `Score`, `HighScore` dan `Game Over`.
