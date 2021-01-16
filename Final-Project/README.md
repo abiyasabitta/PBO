@@ -48,6 +48,9 @@ Hungry Creatures adalah sebuah permainan sederhana yang terinspirasi dari video 
 #### Apple
 `Class Apple` merupakan salah satu subclass dari parent `Class Character` untuk objek yang akan dimakan. Pada class ini terdapat constructor `Apple()` untuk menunjukkan objek Red Apple yang berwarna merah, sedangkan untuk objeck Poison Apple dapat ditentukan menggunakan constructor `Apple(Color color)` menjadi warna ungu. Selain itu, untuk Poison Apple, saat objek tersebut dimakan score pemain akan berkurang.
 
+### Menu
+`Class Menu` merupakan subclass dari GamePanel yang digunakan untuk menampilkan tampilan mulai dan tampilan ketika pemain kalah. Pada class ini terdapat constructor `Menu(int LEBAR, int PANJANG)`. Terdapat 2 buah method dan setter getter class. Method 1 adalah `menugame()` yang berfungsi untuk menampilkan tampilan awal sebelum game dimainkan yang berisi judul game dan tombol untuk memulai permainan. Method 2 adalah `gameOver()` yang berfungsi untuk menunjukan tampilan game over dan skor yang pemain telah capai serta tombol untuk kembali ke tampilan awal. 
+
 # Perubahan
 - Sistem `HighScore` menggunakan method
 ```createSaveData```, ```loadHighScore``` dan ```setHighScore```
