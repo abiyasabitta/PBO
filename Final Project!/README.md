@@ -17,7 +17,7 @@ Hungry Creatures adalah sebuah permainan sederhana yang terinspirasi dari video 
   - Hard
 - [x] Jenis `Snack`
   - Red Apple
-  - Rotten Apple
+  - Poison Apple
 - [x] Menghitung `Score` per babak
 - [x] Menyimpan `High Score`
 - [x] Display `Game Over`
