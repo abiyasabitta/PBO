@@ -58,6 +58,7 @@ Hungry Creatures adalah sebuah permainan sederhana yang terinspirasi dari video 
 - Memilih `Character` terdapat `Snake`, `Centipede`, dan `Worm` menggunakan method ```chooseCharacter``` yang akan diteruskan di method ```drawCharacter```
 - Jenis `Snack` terdapat `Red Apple` dan `Poison Apple` menggunakan method `drawApple`
 - Memilih `Level`: `Easy`, `Normal`, dan `Hard`.
+- Menu dengan  `Play` button dan `GameOver`
 
 # Class Diagram
 ![ClassDiagram](https://github.com/abiyasabitta/PBO/blob/main/Final-Project/Source/ClassDiagram_HungryCreatures.jpg)
