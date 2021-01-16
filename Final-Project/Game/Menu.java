@@ -19,7 +19,7 @@ public class Menu extends GamePanel {
             g.setColor(Color.RED);
             g.setFont(new Font("Courier", Font.BOLD, 50));
             FontMetrics metric =getFontMetrics(g.getFont());
-            g.drawString("HUNGRY CREATURES FINAL PROJECT", (getWIDTH()-metric.stringWidth("HUNGRY CREATURES FINAL PROJECT"))/2, getHEIGHT()/2);
+            g.drawString("HUNGRY CREATURES", (getWIDTH()-metric.stringWidth("HUNGRY CREATURES"))/2, getHEIGHT()/2);
 
             g.setFont(new Font("Courier", Font.PLAIN, 30));
             FontMetrics metrics = getFontMetrics(g.getFont());
