@@ -60,7 +60,7 @@ Hungry Creatures adalah sebuah permainan sederhana yang terinspirasi dari video 
 - Memilih `Level`: `Easy`, `Normal`, dan `Hard`.
 
 # Class Diagram
-![ClassDiagram]
+![ClassDiagram](https://github.com/abiyasabitta/PBO/blob/main/Final-Project/Source/ClassDiagram_HungryCreatures.jpg)
 
 # References
 [Video](https://www.youtube.com/watch?v=bI6e6qjJ8JQ)
