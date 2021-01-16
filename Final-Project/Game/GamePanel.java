@@ -7,9 +7,11 @@ import java.awt.event.KeyEvent;
 import java.util.Random;
 
 public class GamePanel extends JPanel implements ActionListener {
-    static final int SCREEN_WIDTH = 650;
-    static final int SCREEN_HEIGHT = 650;
-    static final int UNIT_SIZE = 50;
+    static final int SCREEN_WIDTH = 570;
+    static final int SCREEN_HEIGHT = 570;
+    static final int FRAME_WIDTH = 630;
+    static final int FRAME_HEIGHT = 660;
+    static final int UNIT_SIZE = 30;
     static final int GAME_UNITS = (SCREEN_WIDTH*SCREEN_HEIGHT)/(UNIT_SIZE*UNIT_SIZE);
     static final int DELAY = 175;
     final int x[] = new int[GAME_UNITS];
@@ -18,14 +20,30 @@ public class GamePanel extends JPanel implements ActionListener {
     int applesEaten = 0; //initialize score
     int appleX;
     int appleY;
+	int poisonAppleX;
+	int poisonAppleY;
 	boolean start = true;
     char direction = 'R';
     boolean running = false;
     Timer timer;
     Random random;
-    static boolean gameOn = false:
-    int speed = 1;
+    static boolean gameOn = false;
     private int highScore = 0; //initialize highScore
+	
+	int Hrange = SCREEN_HEIGHT - 60 + 1;
+    int Wrange = SCREEN_WIDTH - 30 + 1;
+    
+    int right;
+    int down;
+	int speed = 1;
+	int count;
+	int input1;
+    
+    Snake snake;
+    Centipede centipede;
+    Worm worm;
+    Apple poisonApple;
+    Apple apple;
     
     //Saving Score Data
     private String saveDataPath;
@@ -128,13 +146,45 @@ public class GamePanel extends JPanel implements ActionListener {
 		else // Jika tidak ada input exit saja
 			System.exit(0);
 	}
+	
+	private void chooseCharacter() {
+		// Opsi karakter
+		String[] options1 = {"Snake", "Centipede", "Worm"} ;
+		
+		// JOptionPane untuk memilih karakter
+		int input1 = JOptionPane.showOptionDialog(null, 
+				"Choose Character", 
+				"'Snake' Game", 
+				JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, options1, options1[0]) ;
+		
+		// Seleksi pilihan karakter
+		if (input1 == 0) {
+			this.input1 = input1;
+			snake = new Snake();
+		}
+		else if (input1 == 1) {
+			this.input1 = input1;
+			centipede = new Centipede();
+		}
+		else if (input1 == 2) {
+			this.input1 = input1;
+			worm = new Worm();
+        }
+		else // Jika tidak ada input exit saja
+			System.exit(0) ;
+	}
 
     public void startGame(){
 	    if(start){
 		running = false;
 	    }
         else{
+		x[0] = 30;
+    	y[0] = 60;
+		
 	chooseDifficulty();
+		chooseCharacter();
+		count = 0;
         newApple();
         running = true;
         timer = new Timer(DELAY, this);
@@ -176,36 +226,72 @@ public class GamePanel extends JPanel implements ActionListener {
 		screen.menugame(graphics);
 	}
 	else if (running) {
-            graphics.setColor(Color.RED);
-            graphics.fillOval(appleX, appleY, UNIT_SIZE, UNIT_SIZE);
+		//screen
+        	graphics.setColor(new Color(102, 102, 102));
+        	graphics.fillRect(30, 60, SCREEN_WIDTH, SCREEN_HEIGHT);
+		
+		//apple
+        	drawApple(graphics);
 
-            for (int i = 0; i < bodyParts; i++) {
-                if (i == 0) {
-                    graphics.setColor(Color.green);
-                    graphics.fillRect(x[i], y[i], UNIT_SIZE, UNIT_SIZE);
-                } else {
-                    graphics.setColor(new Color(45, 180, 0));
-                    graphics.fillRect(x[i], y[i], UNIT_SIZE, UNIT_SIZE);
-                }
-            }
-            drawScore(graphics);
+            	//character
+            	drawCharacter(graphics);
+		
+		//score
+            	drawScore(graphics);
             }
         else{
             screen.gameOver(graphics, applesEaten);
         }
     }
 
-    public void newApple(){
-        appleX = random.nextInt((int)(SCREEN_WIDTH/UNIT_SIZE))*UNIT_SIZE;
-        appleY = random.nextInt((int)(SCREEN_HEIGHT/UNIT_SIZE))*UNIT_SIZE;
+    public void newApple() {
+    	apple = new Apple();
+    	appleX = random.nextInt((int)(Wrange/UNIT_SIZE))*UNIT_SIZE + 30;
+        appleY = random.nextInt((int)(Hrange/UNIT_SIZE))*UNIT_SIZE + 60;
+        
+	 //tidak spawn di body
+        for(int i = bodyParts; i > 0 ; i--) {
+        	if(appleX == x[i]) {
+        		appleX = random.nextInt((int)(Wrange/UNIT_SIZE))*UNIT_SIZE + 30;
+        	}
+        	else if (appleY == y[i]) {
+        		appleY = random.nextInt((int)(Hrange/UNIT_SIZE))*UNIT_SIZE + 60;
+        	}
+        }
+        
+        //rottenApple
+        if(count == 3) {
+        	poisonApple = new Apple(new Color(102, 0, 153));
+        	poisonApple.setVisible(true);
+        	poisonAppleX = random.nextInt((int)(Wrange/UNIT_SIZE))*UNIT_SIZE + 30;
+            poisonAppleY = random.nextInt((int)(Hrange/UNIT_SIZE))*UNIT_SIZE + 60;
+            
+            //tidak spawn di body
+            for(int i = bodyParts; i > 0 ; i--) {
+            	if(poisonAppleX == x[i]) {
+            		poisonAppleX = random.nextInt((int)(Wrange/UNIT_SIZE))*UNIT_SIZE + 30;
+            	}
+            	else if (poisonAppleY == y[i]) {
+            		poisonAppleY = random.nextInt((int)(Hrange/UNIT_SIZE))*UNIT_SIZE + 60;
+            	}
+            }
+            
+            //tidak spawn di apple
+            if(poisonAppleX == appleX) {
+            	poisonAppleX = random.nextInt((int)(Wrange/UNIT_SIZE))*UNIT_SIZE + 30;
+            }
+            else if(poisonAppleY == appleY) {
+            	poisonAppleY = random.nextInt((int)(Wrange/UNIT_SIZE))*UNIT_SIZE + 60;
+            }
+        }
+        
     }
 
     public void move() {
-            	for(int n = 0; n < speed; n++) {
-    		for (int i = bodyParts; i > 0; i--) {
-                x[i] = x[i - 1];
-                y[i] = y[i - 1];
-            }
+        for (int i = bodyParts; i > 0; i--) {
+            x[i] = x[i - 1];
+            y[i] = y[i - 1];
+        }
 
         switch (direction) {
             case 'U':
@@ -224,11 +310,19 @@ public class GamePanel extends JPanel implements ActionListener {
     }
 
         public void checkApple(){
-            if((x[0] == appleX) && (y[0] == appleY)){
-                bodyParts++;
-                applesEaten++;
-                newApple();
-            }
+            for(int n = 0; n < speed; n++) {
+        		if((x[n] == appleX) && (y[n] == appleY)){
+                	bodyParts++;
+                    applesEaten++;
+                    count++;
+                    newApple();
+                }
+        		else if((x[n] == poisonAppleX) && (y[n] == poisonAppleY)) {
+            		applesEaten -= 2;
+            		count = 0;
+            		newApple();
+        		}
+        	}
             
             if(applesEaten >= highScore) {
         	    highScore = applesEaten;
@@ -243,19 +337,19 @@ public class GamePanel extends JPanel implements ActionListener {
                 }
             }
             //kepala nyentuh kiri
-            if(x[0] < 0){
+            if(x[0] < 30){
                 running = false;
             }
             //kepala nyentuh kanan
-            if(x[0] > SCREEN_WIDTH){
+            if(x[0] > right + 30){
                 running = false;
             }
             //kepala nyentuh atas
-            if(y[0] < 0){
+            if(y[0] < 60){
                 running = false;
             }
             //kepala nyentuh bawah
-            if(y[0] > SCREEN_HEIGHT){
+            if(y[0] > down + 60){
                 running = false;
             }
             if(!running){
@@ -274,6 +368,56 @@ public class GamePanel extends JPanel implements ActionListener {
         graphics.drawString("HighScore: "+highScore, 
         		(SCREEN_WIDTH - metrics1.stringWidth("HighScore: "+highScore))/2, 
         		((SCREEN_HEIGHT - 575)));
+        }
+	
+	public void drawCharacter(Graphics graphics) {
+        	if(input1 == 0) {
+            	for (int i = 0; i < bodyParts; i++) {
+            		if (i == 0) {
+                        graphics.setColor(snake.getColorHead());
+                        graphics.fillRect(x[i], y[i], UNIT_SIZE, UNIT_SIZE);
+                    } else {
+                        graphics.setColor(snake.getColorBody());
+                        graphics.fillRect(x[i], y[i], UNIT_SIZE, UNIT_SIZE);
+                    }
+                }
+            }
+            else if(input1 == 1) {
+            	for (int i = 0; i < bodyParts; i++) {
+                    if (i == 0) {
+                        graphics.setColor(centipede.getColorHead());
+                        graphics.fillRect(x[i], y[i], UNIT_SIZE, UNIT_SIZE);
+                    } else {
+                        graphics.setColor(centipede.getColorBody());
+                        graphics.fillRect(x[i], y[i], UNIT_SIZE, UNIT_SIZE);
+                    }
+                }
+            }
+            else if(input1 == 2) {
+            	for (int i = 0; i < bodyParts; i++) {
+                    if (i == 0) {
+                        graphics.setColor(worm.getColorHead());
+                        graphics.fillRect(x[i], y[i], UNIT_SIZE, UNIT_SIZE);
+                    } else {
+                        graphics.setColor(worm.getColorBody());
+                        graphics.fillRect(x[i], y[i], UNIT_SIZE, UNIT_SIZE);
+                    }
+                }
+            }
+        }
+        
+        public void drawApple(Graphics graphics) {
+        	//apple
+            graphics.setColor(apple.getColorHead());
+            graphics.fillOval(appleX, appleY, UNIT_SIZE, UNIT_SIZE);
+           
+            //poisonApple
+            if(count == 3) {
+            	graphics.setColor(poisonApple.getColorBody());
+            	if(poisonApple.isVisible()) {
+                	graphics.fillOval(poisonAppleX, poisonAppleY, UNIT_SIZE, UNIT_SIZE);
+                }
+            }
         }
 
     @Override
