@@ -7,15 +7,15 @@ import java.awt.event.KeyEvent;
 import java.util.Random;
 
 public class GamePanel extends JPanel implements ActionListener {
-    static final int SCREEN_WIDTH = 1300;
-    static final int SCREEN_HEIGHT = 750;
+    static final int SCREEN_WIDTH = 650;
+    static final int SCREEN_HEIGHT = 650;
     static final int UNIT_SIZE = 50;
     static final int GAME_UNITS = (SCREEN_WIDTH*SCREEN_HEIGHT)/(UNIT_SIZE*UNIT_SIZE);
     static final int DELAY = 175;
     final int x[] = new int[GAME_UNITS];
     final int y[] = new int[GAME_UNITS];
     int bodyParts = 6;
-    int applesEaten;
+    int applesEaten = 0; //initialize score
     int appleX;
     int appleY;
     char direction = 'R';
@@ -38,6 +38,8 @@ public class GamePanel extends JPanel implements ActionListener {
     		e.printStackTrace();
     	}
         
+        loadHighScore()
+            
         random = new Random();
         this.setPreferredSize(new Dimension(SCREEN_WIDTH, SCREEN_HEIGHT));
         this.setBackground(Color.BLACK);
@@ -127,12 +129,7 @@ public class GamePanel extends JPanel implements ActionListener {
                     graphics.fillRect(x[i], y[i], UNIT_SIZE, UNIT_SIZE);
                 }
             }
-            graphics.setColor(Color.RED);
-            graphics.setFont(new Font("Ink Free", Font.BOLD, 40));
-            FontMetrics metrics = getFontMetrics(graphics.getFont());
-            graphics.drawString("Score :" + applesEaten,
-                    (SCREEN_HEIGHT - metrics.stringWidth("Score :" + applesEaten)) / 2,
-                    graphics.getFont().getSize());
+            drawScore(graphics);
             }
         else{
             gameOver(graphics);
@@ -205,15 +202,25 @@ public class GamePanel extends JPanel implements ActionListener {
                 timer.stop();
             }
         }
+    
+        public void drawScore (Graphics graphics) {
+    	setHighScore();
+        graphics.setColor(Color.RED);
+        graphics.setFont(new Font("calibri",Font.BOLD, 40));
+        FontMetrics metrics1 = getFontMetrics(graphics.getFont());
+        graphics.drawString("Score: "+applesEaten, 
+        		(SCREEN_WIDTH - metrics1.stringWidth("Score: "+applesEaten))/2, 
+        		graphics.getFont().getSize());
+        graphics.drawString("HighScore: "+highScore, 
+        		(SCREEN_WIDTH - metrics1.stringWidth("HighScore: "+highScore))/2, 
+        		((SCREEN_HEIGHT - 575)));
+        }
 
         public void gameOver(Graphics graphics){
-            graphics.setColor(Color.RED);
-            graphics.setFont(new Font("Ink Free",Font.BOLD, 40));
-            FontMetrics metrics1 = getFontMetrics(graphics.getFont());
-            graphics.drawString("Score: "+applesEaten, (SCREEN_WIDTH - metrics1.stringWidth("Score: "+applesEaten))/2, graphics.getFont().getSize());
+            drawScore(graphics);
             //Game Over text
             graphics.setColor(Color.red);
-            graphics.setFont( new Font("Ink Free",Font.BOLD, 75));
+            graphics.setFont( new Font("Calibri",Font.BOLD, 75));
             FontMetrics metrics2 = getFontMetrics(graphics.getFont());
             graphics.drawString("Game Over", (SCREEN_WIDTH - metrics2.stringWidth("Game Over"))/2, SCREEN_HEIGHT/2);
         }
