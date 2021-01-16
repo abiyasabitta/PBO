@@ -4,7 +4,7 @@ public class GameFrame extends JFrame{
 	
 	GameFrame() {
 		this.add(new GamePanel());
-        this.setTitle("Animal Snacking");
+        this.setTitle("Hungry Creatures");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setResizable(false);
         this.pack();
