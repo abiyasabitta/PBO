@@ -24,6 +24,7 @@ Hungry Creatures adalah sebuah permainan sederhana yang terinspirasi dari video 
 - [x] `Play Again`
 
 ## Class Description
+Program ini terdiri dari 9 `class` yaitu `Main`, `GameFrame`, `GamePanel`, `Menu`, `Apple`, `Character`, `Snake`, `Centipede`, dan `Worm`.
 
 ### Main
 `Class Main` merupakan `class` utama untuk menjalankan program permainan.
@@ -59,6 +60,9 @@ Hungry Creatures adalah sebuah permainan sederhana yang terinspirasi dari video 
 - Jenis `Snack` terdapat `Red Apple` dan `Poison Apple` menggunakan method `drawApple`
 - Memilih `Level`: `Easy`, `Normal`, dan `Hard`.
 - Menu dengan  `Play` button dan `GameOver`
+
+# Demo
+[Link](https://www.youtube.com/watch?v=WO3C38nUOm4&feature=youtu.be)
 
 # Class Diagram
 ![ClassDiagram](https://github.com/abiyasabitta/PBO/blob/main/Final-Project/Source/ClassDiagram_HungryCreatures.jpg)
