@@ -92,8 +92,39 @@ public class GamePanel extends JPanel implements ActionListener {
     		e.printStackTrace();
     	}
     }
+    
+    private void chooseDifficulty() {
+        // Opsi karakter
+		String[] options1 = {"Easy", "Medium", "Hard"} ;
+		
+		// JOptionPane untuk memilih karakter
+		int input2 = JOptionPane.showOptionDialog(null, 
+				"Choose Difficulty", 
+				"'Snake' Game", 
+				JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, options1, options1[0]) ;
+		
+		// Seleksi pilihan karakter
+		if (input2 == 0) {
+			this.speed = 1;
+			right = 540;
+			down = 540;
+		}
+		else if (input2 == 1) {
+			this.speed = 2;
+			right = 540;
+			down = 540;
+		}
+		else if (input2 == 2) {
+			this.speed = 3;
+			right = 570;
+			down = 540;
+        }
+		else // Jika tidak ada input exit saja
+			System.exit(0);
+	}
 
     public void startGame(){
+        chooseDifficulty()
         newApple();
         running = true;
         timer = new Timer(DELAY, this);
