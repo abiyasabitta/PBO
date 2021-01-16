@@ -288,10 +288,12 @@ public class GamePanel extends JPanel implements ActionListener {
     }
 
     public void move() {
-        for (int i = bodyParts; i > 0; i--) {
-            x[i] = x[i - 1];
-            y[i] = y[i - 1];
-        }
+	for(int n = 0; n < speed; n++) {
+    		for (int i = bodyParts; i > 0; i--) {
+                	x[i] = x[i - 1];
+                	y[i] = y[i - 1];
+            }
+	}
 
         switch (direction) {
             case 'U':
