@@ -22,3 +22,8 @@ Hungry Creatures adalah sebuah permainan sederhana yang terinspirasi dari video 
 - [x] Menyimpan `High Score`
 - [x] Display `Game Over`
 - [ ] `Play Again`
+
+# References
+[Video](https://www.youtube.com/watch?v=bI6e6qjJ8JQ)
+
+[HighScore](https://www.youtube.com/watch?v=qVDi7tk-P-g)
