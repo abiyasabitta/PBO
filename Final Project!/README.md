@@ -30,12 +30,30 @@ Hungry Creatures adalah sebuah permainan sederhana yang terinspirasi dari video 
 
 ### GameFrame
 
-## GamePanel
+### GamePanel
 `Class GamePanel` difungsikan sebagai kontrol utama semua komponen permainan, seperti memunculkan permainan dengan method `draw(Graphics graphics)`, memunculkan teks `Score`, `HighScore` dan `Game Over`.
+
+### Character
+`Class Character` merupakan parent class dari objek-objek yang ada dalam game ini seperti Snake, Centipede, Worm, Red Apple, dan juga Rotten Apple. Pada class ini terdapat method untuk menentukan dan mengetahui warna objek tersebut.
+
+#### Snake
+`Class Snake` merupakan salah satu subclass dari parent `Class Character` yang akan menentukan warna objek yang memakan apple menjadi hijau
+
+#### Centipede
+`Class Centipede` merupakan salah satu subclass dari parent `Class Character` yang akan menentukan warna objek yang memakan apple menjadi merah
+
+#### Worm
+`Class Worm` merupakan salah satu subclass dari parent `Class Character` yang akan menentukan warna objek yang memakan apple menjadi coklat
+
+#### Apple
+`Class Apple` merupakan salah satu subclass dari parent `Class Character` untuk objek yang akan dimakan. Pada class ini terdapat constructor `Apple()` untuk menunjukkan objek Red Apple yang berwarna merah, sedangkan untuk objeck Rotten Apple dapat ditentukan menggunakan constructor `Apple(Color color)` menjadi warna ungu. Selain itu, untuk Rotten Apple, saat objek tersebut dimakan score pemain akan berkurang.
 
 # Perubahan
 - Sistem `HighScore` menggunakan method
 ```createSaveData```, ```loadHighScore``` dan ```setHighScore```
+- Memilih Character menggunakan method ```chooseCharacter``` yang akan diteruskan di method ```drawCharacter```
+- Jenis Snack
+- Memilih level
 
 # Class Diagram
 
