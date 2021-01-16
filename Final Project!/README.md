@@ -6,4 +6,19 @@
 # Hungry Creatures
 Hungry Creatures adalah sebuah permainan sederhana yang terinspirasi dari video game klasik, Snake. Cara bermain nya adalah pemain harus mengontrol gerakan dari _creatures_ yang ada dan akan mendapatkan poin serta ukurannya bertambah panjang  jika berhasil memakan apel. Namun pemain juga harus menghindari _creatures_ dari tepi layar permainan dan gerakan tubuh dari _creatures_.
 
-
+## Features
+- [x] Memilih `Character`
+  - Snake
+  - Centipede
+  - Worm
+- [x] Memilih `Level`
+  - Easy
+  - Normal
+  - Hard
+- [x] Jenis `Snack`
+  - Red Apple
+  - Rotten Apple
+- [x] Menghitung `Score` per babak
+- [x] Menyimpan `High Score`
+- [x] Display `Game Over`
+- [ ] `Play Again`
