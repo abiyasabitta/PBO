@@ -5,7 +5,7 @@ public class Apple extends Character {
 	private boolean visible;
 	
 	public Apple() {
-		super(new Color(51, 153, 255), new Color(51, 153, 255));
+		super(Color.RED, Color.RED);
 	}
 
 	public Apple(Color color){
