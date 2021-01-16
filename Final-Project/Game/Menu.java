@@ -1,4 +1,4 @@
-package ac.id.its.FinalProject.Snake;
+
 
 import java.awt.*;
 
