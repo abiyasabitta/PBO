@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
+import java.io.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
@@ -365,11 +366,11 @@ public class GamePanel extends JPanel implements ActionListener {
         graphics.setFont(new Font("calibri",Font.BOLD, 40));
         FontMetrics metrics1 = getFontMetrics(graphics.getFont());
         graphics.drawString("Score: "+applesEaten, 
-        		(SCREEN_WIDTH - metrics1.stringWidth("Score: "+applesEaten))/2, 
+        		(SCREEN_WIDTH - metrics1.stringWidth("Score: "+applesEaten))/2 - 200,
         		graphics.getFont().getSize());
         graphics.drawString("HighScore: "+highScore, 
-        		(SCREEN_WIDTH - metrics1.stringWidth("HighScore: "+highScore))/2, 
-        		((SCREEN_HEIGHT - 575)));
+        		(SCREEN_WIDTH - 250),
+                graphics.getFont().getSize());
         }
 	
 	public void drawCharacter(Graphics graphics) {
