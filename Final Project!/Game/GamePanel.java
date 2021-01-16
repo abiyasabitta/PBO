@@ -23,14 +23,72 @@ public class GamePanel extends JPanel implements ActionListener {
     Timer timer;
     Random random;
     static boolean gameOn = false;
-
+    private int highScore = 0; //initialize highScore
+    
+    //Saving Score Data
+    private String saveDataPath;
+    private String fileName = "SaveData";
+    
     GamePanel(){
+        try {
+    		saveDataPath = GamePanel.class.getProtectionDomain().getCodeSource().getLocation().toURI().getPath();
+//    		saveDataPath = System.getProperty("user.home") + "\\foldername";
+    	}
+    	catch(Exception e) {
+    		e.printStackTrace();
+    	}
+        
         random = new Random();
         this.setPreferredSize(new Dimension(SCREEN_WIDTH, SCREEN_HEIGHT));
         this.setBackground(Color.BLACK);
         this.setFocusable(true);
         this.addKeyListener(new MyKeyAdapter());
         startGame();
+    }
+    
+    private void createSaveData(){
+    	try {
+    		File file = new File(saveDataPath, fileName);
+    		
+    		FileWriter output = new FileWriter(file);
+    		BufferedWriter writer = new BufferedWriter(output);
+    		writer.write(""+ 0);
+    		
+    		writer.close();
+    	}
+    	catch(Exception e) {
+    		e.printStackTrace();
+    	}
+    }
+    private void loadHighScore(){
+    	try {
+    		File f = new File(saveDataPath, fileName);
+    		if(!f.isFile()) {
+    			createSaveData();
+    		}
+    		BufferedReader reader = new BufferedReader(new InputStreamReader (new FileInputStream(f)));
+    		highScore = Integer.parseInt(reader.readLine());
+    		reader.close();
+    	}
+    	catch(Exception e) {
+    		e.printStackTrace();
+    	}
+    }
+    private void setHighScore(){
+    	FileWriter output = null;
+    	
+    	try {
+    		File f = new File(saveDataPath, fileName);
+    		output = new FileWriter(f);
+    		BufferedWriter writer = new BufferedWriter(output); 
+    		
+    		writer.write(""+ highScore);
+    		
+    		writer.close();
+    	}
+    	catch(Exception e) {
+    		e.printStackTrace();
+    	}
     }
 
     public void startGame(){
@@ -113,6 +171,10 @@ public class GamePanel extends JPanel implements ActionListener {
                 bodyParts++;
                 applesEaten++;
                 newApple();
+            }
+            
+            if(applesEaten >= highScore) {
+        	    highScore = applesEaten;
             }
         }
 
