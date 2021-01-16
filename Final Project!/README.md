@@ -3,4 +3,7 @@
 2. Vyra Fania Adelina - 05111940000109
 3. Abiya Sabitta Ragadani - 05111940000166
 
+# Hungry Creatures
+Hungry Creatures adalah sebuah permainan sederhana yang terinspirasi dari video game klasik, Snake. Cara bermain nya adalah pemain harus mengontrol gerakan dari _creatures_ yang ada dan akan mendapatkan poin serta ukurannya bertambah panjang  jika berhasil memakan apel. Namun pemain juga harus menghindari _creatures_ dari tepi layar permainan dan gerakan tubuh dari _creatures_.
+
 
