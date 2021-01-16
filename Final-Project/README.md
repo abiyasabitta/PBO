@@ -62,7 +62,7 @@ Program ini terdiri dari 9 `class` yaitu `Main`, `GameFrame`, `GamePanel`, `Menu
 - Menu dengan  `Play` button dan `GameOver`
 
 # Demo
-[Link](https://www.youtube.com/watch?v=WO3C38nUOm4&feature=youtu.be)
+[Link](https://youtu.be/WO3C38nUOm4)
 
 # Class Diagram
 ![ClassDiagram](https://github.com/abiyasabitta/PBO/blob/main/Final-Project/Source/ClassDiagram_HungryCreatures.jpg)
