@@ -46,13 +46,13 @@ Hungry Creatures adalah sebuah permainan sederhana yang terinspirasi dari video 
 `Class Worm` merupakan salah satu subclass dari parent `Class Character` yang akan menentukan warna objek yang memakan apple menjadi coklat
 
 #### Apple
-`Class Apple` merupakan salah satu subclass dari parent `Class Character` untuk objek yang akan dimakan. Pada class ini terdapat constructor `Apple()` untuk menunjukkan objek Red Apple yang berwarna merah, sedangkan untuk objeck Rotten Apple dapat ditentukan menggunakan constructor `Apple(Color color)` menjadi warna ungu. Selain itu, untuk Rotten Apple, saat objek tersebut dimakan score pemain akan berkurang.
+`Class Apple` merupakan salah satu subclass dari parent `Class Character` untuk objek yang akan dimakan. Pada class ini terdapat constructor `Apple()` untuk menunjukkan objek Red Apple yang berwarna merah, sedangkan untuk objeck Poison Apple dapat ditentukan menggunakan constructor `Apple(Color color)` menjadi warna ungu. Selain itu, untuk Rotten Apple, saat objek tersebut dimakan score pemain akan berkurang.
 
 # Perubahan
 - Sistem `HighScore` menggunakan method
 ```createSaveData```, ```loadHighScore``` dan ```setHighScore```
-- Memilih Character menggunakan method ```chooseCharacter``` yang akan diteruskan di method ```drawCharacter```
-- Jenis Snack
+- Memilih Character terdapat Snake, Centipede, dan Worm menggunakan method ```chooseCharacter``` yang akan diteruskan di method ```drawCharacter```
+- Jenis Snack terdapat Red Apple dan Poison Apple menggunakan method `drawApple`
 - Memilih level
 
 # Class Diagram
